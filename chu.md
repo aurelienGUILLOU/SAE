@@ -5,6 +5,6 @@ groupe numéro : 10
 * étudiant 3 : GIRAUD Thomas
 * étudiant 4 : LACHAT Antoine
 
-URL du projet github :
+URL du projet github : https://aurelienguillou.github.io/SAE/
 
 URL du site pythonanywhere :
