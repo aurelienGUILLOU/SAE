@@ -13,14 +13,14 @@ DROP TABLE IF EXISTS type_peinture;
 DROP TABLE IF EXISTS fournisseur;
 
 CREATE TABLE IF NOT EXISTS user (
-    id INT AUTO_INCREMENT,
+    user_id INT AUTO_INCREMENT,
     username VARCHAR(50), 
     password VARCHAR(200), 
     role VARCHAR(20),  
     est_actif INT, 
     pseudo VARCHAR(15), 
     email VARCHAR(30),
-    PRIMARY KEY(id)
+    PRIMARY KEY(user_id)
 )CHARACTER SET 'utf8';
 
 CREATE TABLE IF NOT EXISTS etat (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS commande(
     idUser INT,
     idEtat INT,
     PRIMARY KEy(idCommande),
-    CONSTRAINT fk_user_commande FOREIGN KEY (idUser) REFERENCES user(id),
+    CONSTRAINT fk_user_commande FOREIGN KEY (idUser) REFERENCES user(user_id),
     CONSTRAINT fk_etat_commande FOREIGN KEY (idEtat) REFERENCES etat(idEtat)
 )CHARACTER SET 'utf8';
 
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS panier(
     idUser INT,
     idPeinture INT,
     PRIMARY KEy(idPanier),
-    CONSTRAINT fk_user_panier FOREIGN KEY (idUser) REFERENCES user(id),
+    CONSTRAINT fk_user_panier FOREIGN KEY (idUser) REFERENCES user(user_id),
     CONSTRAINT fk_peinture_panier FOREIGN KEY (idPeinture) REFERENCES peinture(idPeinture)
 )CHARACTER SET 'utf8';
 
@@ -134,11 +134,11 @@ CREATE TABLE IF NOT EXISTS fournit(
 )CHARACTER SET 'utf8';
 
 
-INSERT INTO user (id, email, username, password, role,  est_actif) VALUES 
+INSERT INTO user (user_id, email, username, password, role,  est_actif) VALUES 
 (null, 'admin@admin.fr', 'admin', 'sha256$pBGlZy6UukyHBFDH$2f089c1d26f2741b68c9218a68bfe2e25dbb069c27868a027dad03bcb3d7f69a', 'ROLE_admin', 1);
-INSERT INTO user (id, email, username, password, role,  est_actif) VALUES 
+INSERT INTO user (user_id, email, username, password, role,  est_actif) VALUES 
 (null, 'client@client.fr', 'client', 'sha256$Q1HFT4TKRqnMhlTj$cf3c84ea646430c98d4877769c7c5d2cce1edd10c7eccd2c1f9d6114b74b81c4', 'ROLE_client',   1);
-INSERT INTO user (id, email, username, password, role, est_actif) VALUES 
+INSERT INTO user (user_id, email, username, password, role, est_actif) VALUES 
 (null, 'client2@client2.fr', 'client2', 'sha256$ayiON3nJITfetaS8$0e039802d6fac2222e264f5a1e2b94b347501d040d71cfa4264cad6067cf5cf3', 'ROLE_client',   1);
 
 INSERT INTO etat (libelleEtat) VALUES ('non commande');
