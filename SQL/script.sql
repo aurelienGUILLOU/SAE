@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS peinture(
     nomPeinture VARCHAR(50),
     prix NUMERIC(5,2),
     image VARCHAR(100),
+    stock INT,
     idAspect INT,
     idType INT,
     PRIMARY KEY(idPeinture),
