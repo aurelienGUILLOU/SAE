@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS type_conteneur(
 
 CREATE TABLE IF NOT EXISTS type_peinture(
     idType INT AUTO_INCREMENT,
+    libelleType VARCHAR(50),
     supportDestination VARCHAR(50),
     tempsSechage INT,
-    libelleType VARCHAR(50),
     PRIMARY KEY(idType)
 )CHARACTER SET 'utf8';
 
