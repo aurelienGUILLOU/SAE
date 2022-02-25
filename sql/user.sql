@@ -78,8 +78,10 @@ CREATE TABLE IF NOT EXISTS peinture(
     image VARCHAR(100),
     idAspect INT,
     idType INT,
+    idCouleur INT,
     PRIMARY KEY(idPeinture),
     CONSTRAINT fk_aspect_peinture FOREIGN KEY (idAspect) REFERENCES aspect(idAspect),
+    CONSTRAINT fk_couleur_peinture FOREIGN KEY (idCouleur) REFERENCES couleur(idCouleur),
     CONSTRAINT fk_type_peinture_peinture FOREIGN KEY (idType) REFERENCES type_peinture(idType)
 )CHARACTER SET 'utf8';
 
