@@ -74,8 +74,8 @@ CREATE TABLE IF NOT EXISTS peinture(
     idPeinture INT AUTO_INCREMENT,
     nomPeinture VARCHAR(50),
     prix NUMERIC(5,2),
-    image VARCHAR(100),
     stock INT,
+    image VARCHAR(100),
     idAspect INT,
     idType INT,
     PRIMARY KEY(idPeinture),
@@ -87,7 +87,6 @@ CREATE TABLE IF NOT EXISTS peinture(
 CREATE TABLE IF NOT EXISTS panier(
     idPanier INT AUTO_INCREMENT,
     dateAjout DATE,
-    prixUnit INT,
     quantite INT,
     idUser INT,
     idPeinture INT,
@@ -107,7 +106,7 @@ CREATE TABLE IF NOT EXISTS fournisseur(
 CREATE TABLE IF NOT EXISTS ligne_commande(
     idCommande INT,
     idPeinture INT,
-    prixUnit INT,
+    prixUnit NUMERIC(5,2),
     quantite INT,
     PRIMARY KEY(idCommande, idPeinture),
     CONSTRAINT fk_commande_ligne_commande FOREIGN KEY (idCommande) REFERENCES commande(idCommande),
@@ -141,29 +140,34 @@ INSERT INTO user (user_id, email, username, password, role,  est_actif) VALUES
 (null, 'client@client.fr', 'client', 'sha256$Q1HFT4TKRqnMhlTj$cf3c84ea646430c98d4877769c7c5d2cce1edd10c7eccd2c1f9d6114b74b81c4', 'ROLE_client',   1);
 INSERT INTO user (user_id, email, username, password, role, est_actif) VALUES 
 (null, 'client2@client2.fr', 'client2', 'sha256$ayiON3nJITfetaS8$0e039802d6fac2222e264f5a1e2b94b347501d040d71cfa4264cad6067cf5cf3', 'ROLE_client',   1);
+INSERT INTO user (user_id, email, username, password, role, est_actif) VALUES 
+(null,'aurelienguillou92@gmail.com','a','sha256$y0NWuYk5$bffafd929aebd1a4a5d8c8b0eab73c8b9f789e68ff4ae5740550e2feec8ce3b7','ROLE_client', 1 );
 
-INSERT INTO etat (libelleEtat) VALUES ('non commande');
-INSERT INTO etat (libelleEtat) VALUES ('commande');
-INSERT INTO etat (libelleEtat) VALUES ('delivre');
 
-LOAD DATA LOCAL INFILE 'peinture.csv' INTO TABLE peinture CHARACTER SET utf8 FIELDS TERMINATED BY ',';
+INSERT INTO etat (libelleEtat) VALUES ('en cours de traitement');
+INSERT INTO etat (libelleEtat) VALUES ('expedié');
+
 LOAD DATA LOCAL INFILE 'tpeinture.csv' INTO TABLE type_peinture CHARACTER SET utf8 FIELDS TERMINATED BY ',';
+LOAD DATA LOCAL INFILE 'aspect.csv' INTO TABLE aspect CHARACTER SET utf8 FIELDS TERMINATED BY ',';
+LOAD DATA LOCAL INFILE 'peinture.csv' INTO TABLE peinture CHARACTER SET utf8 FIELDS TERMINATED BY ',';
+SHOW WARNINGS;
 LOAD DATA LOCAL INFILE 'conteneur.csv' INTO TABLE type_conteneur CHARACTER SET utf8 FIELDS TERMINATED BY ',';
 LOAD DATA LOCAL INFILE 'couleur.csv' INTO TABLE couleur CHARACTER SET utf8 FIELDS TERMINATED BY ',';
 LOAD DATA LOCAL INFILE 'FOURNISSEUR.csv' INTO TABLE fournisseur CHARACTER SET utf8 FIELDS TERMINATED BY ';';
-LOAD DATA LOCAL INFILE 'aspect.csv' INTO TABLE aspect CHARACTER SET utf8 FIELDS TERMINATED BY ',';
 LOAD DATA LOCAL INFILE 'contenu.csv' INTO TABLE contenu CHARACTER SET utf8 FIELDS TERMINATED BY ',';
+SHOW WARNINGS;
 LOAD DATA LOCAL INFILE 'fournit.csv' INTO TABLE fournit CHARACTER SET utf8 FIELDS TERMINATED BY ',';
+SHOW WARNINGS;
 
 -- SELECT * FROM user;
--- SELECT * FROM commande; // empty
--- SELECT * FROM ligne_commande;  // empty
--- SELECT * FROM panier;   // empty
+-- SELECT * FROM commande;
+-- SELECT * FROM ligne_commande;
+-- SELECT * FROM panier;
 -- SELECT * FROM etat;
-SELECT * FROM fournit;
-SELECT * FROM peinture;
+-- SELECT * FROM fournit;
+-- SELECT * FROM peinture;
 -- SELECT * FROM couleur;
-SELECT * FROM type_conteneur;
+-- SELECT * FROM type_conteneur;
 -- SELECT * FROM type_peinture;
 -- SELECT * FROM aspect;
 -- SELECT * FROM fournisseur;
