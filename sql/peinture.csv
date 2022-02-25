@@ -1,0 +1,42 @@
+1,base,3.6,10,base.png,1,10
+2,shade,6.3,11,shade.jpg,1,10
+3,dry,3.6,12,dry.jpg,1,10
+4,contrast,6.3,13,contrast.png,1,10
+5,layer,3.6,14,layer.jpg,1,10
+6,technical,6.3,15,technical.jpg,1,10
+7,texture,6.3,16,texture.jpg,1,10
+8,testeur de couleur,1.9,17,testeur.jpg,1,1
+9,creme de couleur,19.9,18,creme.jpg,1,1
+10,color resist,53.9,19,colorResist.jpg,1,2
+11,si simple,18.49,20,simple.jpeg,1,5
+12,chalk paint,30.88,21,chalk.jpg,1,11
+13,peinture de renovation,62.9,22,renov.jpg,1,11
+14,peinture monocouche,89.90,23,mono.jpg,1,2
+15,laque valénite,8.90,24,valenite.jpeg,1,5
+16,multi-support,51.90,25,multi.jpg,1,2
+17,peinture bicouche,51.90,26,bicouche.jpg,1,11
+18,peinture a l'huile,5.45,27,huile.jpg,1,12
+19,encre taille-douce,10.95,28,encre.jpg,1,12
+20,huile fine,5.25,29,fine.jpg,1,12
+21,encre de couleur,6.25,30,couleur.jpg,1,12
+22,peinture sur verre,7.80,31,verre.jpg,1,12
+23,gouache solaire,4.45,32,solaire.jpg,1,12
+24,acrylique collor,9.45,33,acrylique.jpg,1,12
+25,gouache fine,7.70,34,no_photo.jpeg,1,12
+26,ondikyd,87.90,35,ondikyd.jpg,1,3
+27,ondimat,70.20,36,ondimat.jpg,1,9
+28,nigatex,104.80,37,nigatex.jpg,1,9
+29,cofavelour,27.10,38,cofavelour.jpg,1,1
+30,abyss,35.0,39,abyss.jpg,1,7
+31,cofabrill,29.40,40,cofabrill.jpg,1,1
+32,ultra solmur,61.0,41,solmur.png,1,1
+33,peinture 4 en 1,32.70,42,no_photo.jpeg,1,11
+34,peinture mur et plafond,175.10,43,murs.jpg,1,3
+35,peinture décorative,43.30,44,deco.jpg,1,3
+36,peinture bois interieur exterieur,46.80,45,bois.jfif,1,5
+37,peinture polyvalente anti moisissure,99.10,46,poly.jpeg,1,11
+38,peinture laque intérieur et extérieur,58.40,47,laque.jpg,1,11
+39,peinture murs et plafonds,87.0,48,plafonds.jpg,1,11
+40,blanc monocouche,44.90,49,monocouche.png,1,4
+41,peinture a base de résine,44.90,50,resine.jpg,1,8
+42,peinture anti condensation,54.90,51,antiCondens.jpeg,1,7
